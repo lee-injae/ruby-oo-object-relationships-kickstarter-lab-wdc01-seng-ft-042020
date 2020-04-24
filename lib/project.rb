@@ -14,5 +14,13 @@ class Project
             ProjectBacker.new(self, backer)
         end
 
+        def backers
+            pbs = ProjectBacker.all.select do |pb|
+                pb.project == self 
+            end
+            pbs.map do |pb|
+                pb.backer
+            end
 
+        end
 end

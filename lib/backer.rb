@@ -1,5 +1,3 @@
-
-
 class Backer
 
     attr_reader :name
@@ -13,11 +11,11 @@ class Backer
         end
 
         def backed_projects
-            pbs = ProjectBacker.select do |pb| 
-                 pb.project == self
+            pbs = ProjectBacker.all.select do |pb| 
+                 pb.backer == self
             end
             pbs.map do |pb|
-                pb.backer 
+                pb.project 
             end
         end
 
