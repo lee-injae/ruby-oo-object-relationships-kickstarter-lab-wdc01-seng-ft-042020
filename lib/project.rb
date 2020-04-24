@@ -6,8 +6,12 @@ class Project
             @title = title
         end
 
-        def (project)
-            ProjectBacker.new (project, self)
+        # def project
+        #     ProjectBacker.new(project, self)
+        # end
+
+        def add_backer(backer)
+            ProjectBacker.new(self, backer)
         end
 
 
